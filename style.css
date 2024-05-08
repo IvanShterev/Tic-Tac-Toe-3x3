@@ -1,0 +1,135 @@
+html{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1{
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.game-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.cell{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    width: 200px;
+    height: 200px;
+    font-weight: bold;
+    border: 1px solid black;
+}
+
+.bottom-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 40px;
+}
+
+#restart{
+   padding: 10px; 
+   width: 90px;
+   border-radius: 12px;
+   cursor: pointer;
+   background-color: rgb(233, 184, 94);
+   border: none;
+}
+
+/* first, fifth, ninth */
+.diagonal-left::after{
+    content: "";
+    height: 3px;
+    width: 288px;
+    background: red;
+    transform: rotate(45deg);
+    position: absolute;
+} 
+
+/* first, second, third */
+.horizontal-top::after{
+    content: "";
+    height: 3px;
+    width: 204px;
+    background: red;
+    transform: rotate(180deg);
+    position: absolute;
+}
+
+/* first, fourth, seventh */
+.vertical-left::after{
+    content: "";
+    height: 3px;
+    width: 204px;
+    background: red;
+    transform: rotate(90deg);
+    position: absolute;
+}
+
+/* second, fifth, eight */
+.vertical-middle::after{
+    content: "";
+    height: 3px;
+    width: 204px;
+    background: red;
+    transform: rotate(90deg);
+    position: absolute;
+}
+
+/* third, sixth, ninth */
+.vertical-right::after{
+    content: "";
+    height: 3px;
+    width: 204px;
+    background: red;
+    transform: rotate(90deg);
+    position: absolute;
+}
+
+/* third, fifth, seventh */
+.diagonal-right::after{
+    content: "";
+    height: 3px;
+    width: 288px;
+    background: red;
+    transform: rotate(135deg);
+    position: absolute;
+}
+
+/* fourth, fifth, sixth */
+.horizontal-middle::after{
+    content: "";
+    height: 3px;
+    width: 204px;
+    background: red;
+    transform: rotate(180deg);
+    position: absolute;
+}
+
+/* seventh, eighth, ninth */
+.horizontal-bottom::after{
+    content: "";
+    height: 3px;
+    width: 204px;
+    background: red;
+    transform: rotate(180deg);
+    position: absolute;
+}
