@@ -28,6 +28,7 @@ h1{
 }
 
 .cell{
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -36,6 +37,8 @@ h1{
     height: 200px;
     font-weight: bold;
     border: 1px solid black;
+    color: transparent;
+    user-select: none;
 }
 
 .bottom-container{
@@ -133,3 +136,51 @@ h1{
     transform: rotate(180deg);
     position: absolute;
 }
+
+.x-class,
+.o-class{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.x-class::before,
+.x-class::after{
+    content: '';
+    position: absolute;
+    height: 3px;
+    width: 75%;
+    background: black;
+    border-radius: 10px;
+}
+
+.x-class::before{
+    transform: rotate(45deg);
+}
+
+.x-class::after{
+    transform: rotate(-45deg);
+}
+
+.o-class::before{
+    content: '';
+    position: absolute;
+    border: 3px solid black;
+    height: 60%;
+    width: 60%;
+    border-radius: 50%;
+}
+
+.cell-ghost{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    top: 0;
+    left: 0;
+    user-select: none;
+}
+

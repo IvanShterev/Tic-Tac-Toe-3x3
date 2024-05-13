@@ -10,6 +10,7 @@ const eighth = document.getElementById('eighth')
 const ninth = document.getElementById('ninth')
 const turnText = document.getElementById('turn')
 const bottomContainer = document.querySelector('.bottom-container')
+const cellGhostList = document.querySelectorAll('.cell-ghost')
 let flag = 0
 let grid = [
     ['', '', ''],
@@ -129,55 +130,49 @@ function checkWinner(){
     }
 }
 
-function addEListener(cell){
-    cell.addEventListener('click', () => {
+function addEListener(cellGhost){
+    cellGhost.addEventListener('click', () => {
         if (flag % 2 == 0){
-            cell.textContent = 'X'
+            cellGhost.classList.add('x-class')
+            cellGhost.textContent = 'X'
             turnText.textContent = "Player O's turn"
         } else{
-            cell.textContent = 'O'
+            cellGhost.classList.add('o-class')
+            cellGhost.textContent = 'O'
             turnText.textContent = "Player X's turn"
         }
         flag++
-        cell.style.pointerEvents = 'none'
+        cellGhost.style.pointerEvents = 'none'
         
-        if(cell.id == 'first'){
-            grid[0][0] = cell.textContent
+        if(cellGhost.id == 'g-first'){
+            grid[0][0] = cellGhost.textContent
         }
-        if(cell.id == 'second'){
-            grid[0][1] = cell.textContent
+        if(cellGhost.id == 'g-second'){
+            grid[0][1] = cellGhost.textContent
         }
-        if(cell.id == 'third'){
-            grid[0][2] = cell.textContent
+        if(cellGhost.id == 'g-third'){
+            grid[0][2] = cellGhost.textContent
         }
-        if(cell.id == 'fourth'){
-            grid[1][0] = cell.textContent
+        if(cellGhost.id == 'g-fourth'){
+            grid[1][0] = cellGhost.textContent
         }
-        if(cell.id == 'fifth'){
-            grid[1][1] = cell.textContent
+        if(cellGhost.id == 'g-fifth'){
+            grid[1][1] = cellGhost.textContent
         }
-        if(cell.id == 'sixth'){
-            grid[1][2] = cell.textContent
+        if(cellGhost.id == 'g-sixth'){
+            grid[1][2] = cellGhost.textContent
         }
-        if(cell.id == 'seventh'){
-            grid[2][0] = cell.textContent
+        if(cellGhost.id == 'g-seventh'){
+            grid[2][0] = cellGhost.textContent
         }
-        if(cell.id == 'eighth'){
-            grid[2][1] = cell.textContent
+        if(cellGhost.id == 'g-eighth'){
+            grid[2][1] = cellGhost.textContent
         }
-        if(cell.id == 'ninth'){
-            grid[2][2] = cell.textContent
+        if(cellGhost.id == 'g-ninth'){
+            grid[2][2] = cellGhost.textContent
         }
         checkWinner()
     })
 }
 
-addEListener(first)
-addEListener(second)
-addEListener(third)
-addEListener(fourth)
-addEListener(fifth)
-addEListener(sixth)
-addEListener(seventh)
-addEListener(eighth)
-addEListener(ninth)
+cellGhostList.forEach(cellGhost => addEListener(cellGhost))
