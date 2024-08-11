@@ -10,7 +10,7 @@ const eighth = document.getElementById('eighth')
 const ninth = document.getElementById('ninth')
 const turnText = document.getElementById('turn')
 const bottomContainer = document.querySelector('.bottom-container')
-const cellGhostList = document.querySelectorAll('.cell-ghost')
+const cellGhostList = document.querySelectorAll('.cell-ghost') 
 let flag = 0
 let grid = [
     ['', '', ''],
